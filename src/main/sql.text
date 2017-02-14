@@ -1,0 +1,22 @@
+CREATE DATABASE myweb;
+CREATE TABLE user (
+id int(11) NOT NULL  AUTO_INCREMENT,
+nick_name VARCHAR(128) COMMENT '昵称' ,
+password VARCHAR(64) COMMENT '密码',
+email VARCHAR(64) COMMENT '邮箱地址',
+status int(1) DEFAULT '0'  COMMENT '状态，1表示失效，0表示可用',
+role int(1) DEFAULT  '0' COMMENT   '状态，1表示管理员，0一般用户',
+create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+PRIMARY KEY ( id )
+)COMMENT='用户表' ENGINE=InnoDB COLLATE='utf8_general_ci';
+
+CREATE TABLE article (
+id int(11) NOT NULL AUTO_INCREMENT,
+title VARCHAR(255) COMMENT '标题',
+description VARCHAR(255) COMMENT '描述',
+text LONGTEXT COMMENT '富文本内容',
+create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+status int(1) COMMENT '状态，1表示失效，0表示可用',
+user_id int(11) COMMENT '用户id',
+PRIMARY KEY ( id )
+)COMMENT='文章表' ENGINE=InnoDB COLLATE='utf8_general_ci';

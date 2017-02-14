@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>王先荣个人论坛_上传</title>
+    <link rel="shortcut icon" type="image/ico" th:href="@{/images/logo.ico}"/>
+</head>
+<body>
+    <form action="/upload.do" method="post" enctype="multipart/form-data">
+        上传的文件：<input type="file" name="file"/><br/>
+        文件新名称：<input type="text" name="name"/><br/>
+        <input type="submit" value="上传"/>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>王先荣网站_注册</title>
+    <script type="application/javascript" th:src="@{/js/lib/jquery-1.7.1.min.js}"></script>
+    <script type="application/javascript" th:src="@{/js/register.js}"></script>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/register.css}"/>
+</head>
+<body style="background:#CFC">
+	<div class="green"></div>
+    
+    <div class="box">
+        <div class="header">
+            <div class="header_content_up">
+               <div class="header_content_left">
+                  <h1>王先荣<wang>个人</wang>网站</h1>
+                  <p>动手比纯看书舒服多了</p>
+                </div>
+               <div class="header_content_right">
+                   <p class="advice_title"><strong>公告</strong></p>
+                    <div class="advice_content">
+                       欢迎使用！
+                     </div>
+               </div>
+          	</div>
+            <div class="header_content_below">
+                <div class="header_content_navigation">
+                    <a href="/index.html">首页</a>
+                 </div>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="content_content">
+                <div class="content_content_one">
+                    <div class="register_div">
+                        <div class="ad_div">
+                            <h2>注册</h2><em class="ad_em"><wang id="ad"></wang></em>
+                        </div>
+                    <form action="javascript:void(0)" class="register_form">
+                        昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" id="nickName" name="nickName"/><br/>
+                        密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" id="password"/><br/>
+                      <!--  确认密码：<input type="password"/><br/>-->
+                        邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="email" id="email" name="email"/><br/>
+                        验&nbsp;证&nbsp;&nbsp;码：<input type="text" id="code"/><button id="sendMail" type="button">获取邮箱验证码</button><br/>
+                        <input type="button" value="确定" id="sub" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/findPwd.html" id="findPassword">找回密码</a>
+                    </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fotter">
+        	<div class="fotter_content">
+            	<div class="fotter_content_copyright">
+       		       王先荣版权所有<br/>
+       			   页面设计：徐斌 和 王先荣
+                </div>
+                <div class="fotter_content_email">
+                	联系<a href="#" id="feedback"><wang>管理员</wang></a>
+                </div>
+                <div class="fotter_content_version">
+                	版本号<a href="/versions.html">1.0.1</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="green"></div>
+
+</body>
+</html>

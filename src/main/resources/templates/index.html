@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>王先荣网站_主页</title>
+    <script type="application/javascript" th:src="@{/js/lib/jquery-1.7.1.min.js}"></script>
+    <script type="application/javascript" th:src="@{/js/index.js}"></script>
+    <script type="application/javascript" th:src="@{/js/login.js}"></script>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/index.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/js/paging/css/page.css}"/>
+    <script type="application/javascript" th:src="@{/js/paging/js/page.js}"></script>
+
+
+</head>
+<input type="hidden" th:value="${articleList.count}" id="count"/>
+<body style="background:#CFC" onload="clipInit()">
+	<div class="green"></div>
+    
+    <div class="box">
+        <div class="header">
+            <div class="header_content_up">
+               <div class="header_content_left">
+                  <h1>王先荣<wang>个人</wang>网站</h1>
+                  <p>动手比纯看书舒服多了</p>
+                </div>
+               <div class="header_content_right">
+                   <p class="advice_title"><strong>公告</strong></p>
+                    <div class="advice_content">
+                       欢迎使用！
+                     </div>
+               </div>
+          	</div>
+            <div class="header_content_below">
+                <div class="header_content_navigation">
+                    <a href="/index.html">首页</a>
+                 </div>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="content_content">
+            <div class="content_content_one">
+            	<div class="content_content_left">
+                
+                
+                
+                	<div class="article" th:each="article:${articleList.list}">
+                        <h2><a th:href="'/article/details/'+${article.id}+'.html'"><span th:text="${article.title}"></span></a></h2>
+                        <div class="article_authorAndTime">
+                            <span>作者：</span><em th:text="${article.user.nickName}"></em>
+                            <span>发布时间:</span><em th:text="${#dates.format(article.createTime,'yyyy-MM-dd')}"></em>
+                        </div><br/>
+                        <div th:text="${article.description}">
+                        </div>
+                    </div>
+
+                    <div class="paging" id="clipDIV" th:if="${articleList.count>20}">
+                    </div>
+                
+                
+                </div>
+                <div class="content_content_right">
+                	<div class="content_content_right_loginAndRegister" th:if="${#lists.isEmpty(#httpServletRequest.getSession().getAttribute('user'))}">
+                	<div class="content_content_right_login">
+                    	<form action="#javascript:void(0)" method="post" class="register_form">
+                        	<span>用户登录</span><br /><br />
+                        	邮箱：<input type="text" name="email" id="email"/><br /><br />
+                            密码：<input type="password" name="password" id="password"/><br/><br />
+                            <input type="button" value="登录"  id="sub"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="/user/findPwd.html" id="findPassword">找回密码</a>
+                        </form>
+                    </div>
+                    <div class="content_content_right_register"><a href="/user/register.html">注册</a></div>
+                    <div class="content_content_right_register">登录后可发布文章</div>
+                	</div>
+                    <div class="content_content_right_loginAndRegister" th:if="${!#lists.isEmpty(#httpServletRequest.getSession().getAttribute('user'))}">
+                        <span th:text="'欢迎您：'+${#httpServletRequest.getSession().getAttribute('user').nickName}"></span><br/>&nbsp;||&nbsp;<a href="javascript:void(0)" id="logout">退出</a>&nbsp;||&nbsp;<a href="/article/publish.html">发布</a>
+                    </div>
+                </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="fotter">
+        	<div class="fotter_content">
+            	<div class="fotter_content_copyright">
+       		       王先荣版权所有<br/>
+       			   页面设计：徐斌 和 王先荣
+                </div>
+                <div class="fotter_content_email">
+                	联系<a href="#" id="feedback"><wang>管理员</wang></a>
+                </div>
+                <div class="fotter_content_version">
+                	版本号<a href="/versions.html">1.0.1</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="green"></div>
+
+</body>
+</html>

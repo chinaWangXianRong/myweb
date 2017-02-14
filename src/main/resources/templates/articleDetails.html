@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>王先荣网站_文章详情页</title>
+    <script type="application/javascript" th:src="@{/js/lib/jquery-1.7.1.min.js}"></script>
+    <script type="application/javascript" th:src="@{/js/index.js}"></script>
+    <script type="application/javascript" th:src="@{/js/login.js}"></script>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/index.css}"/>
+
+
+</head>
+<body style="background:#CFC" >
+	<div class="green"></div>
+    
+    <div class="box">
+        <div class="header">
+            <div class="header_content_up">
+               <div class="header_content_left">
+                  <h1>王先荣<wang>个人</wang>网站</h1>
+                  <p>动手比纯看书舒服多了</p>
+                </div>
+               <div class="header_content_right">
+                   <p class="advice_title"><strong>公告</strong></p>
+                    <div class="advice_content">
+                       欢迎使用！
+                     </div>
+               </div>
+          	</div>
+            <div class="header_content_below">
+                <div class="header_content_navigation">
+                    <a href="/index.html">首页</a>
+                 </div>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="content_content">
+            <div class="content_content_one">
+
+                <div class="details">
+                    <h1 th:text="${article.title}"></h1><br/>
+                    <h4 th:text="${article.description}"></h4>
+                    <p th:text="${article.user.nickName}" style="float:right"></p><br/>
+                    <p th:text="${#calendars.format(article.createTime,'yyyy-MM-dd HH:mm:ss')}"  style="float:right"></p><br/><br/>
+                    <br/>
+                    <br/>
+                    <div th:utext="${article.text}">
+                    </div>
+                </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="fotter">
+        	<div class="fotter_content">
+            	<div class="fotter_content_copyright">
+       		       王先荣版权所有<br/>
+       			   页面设计：徐斌 和 王先荣
+                </div>
+                <div class="fotter_content_email">
+                	联系<a href="#" id="feedback"><wang>管理员</wang></a>
+                </div>
+                <div class="fotter_content_version">
+                	版本号<a href="/versions.html">1.0.1</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="green"></div>
+
+</body>
+</html>

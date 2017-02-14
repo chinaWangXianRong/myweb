@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>王先荣个人论坛_主页</title>
+    <link rel="shortcut icon" type="image/ico" th:href="@{/images/logo.ico}"/>
+    <script type="application/javascript" th:src="@{/js/lib/jquery-1.7.1.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/js/editor/dist/css/wangEditor.min.css}"/>
+</head>
+<body style="width:70%">
+<div >
+    <img th:src="@{/images/logo.png}"/>
+    <br/>
+    <div th:if="${#lists.isEmpty(#httpServletRequest.getSession().getAttribute('user'))}" >
+        <a  href="/user/login.html">登录</a> &nbsp;||&nbsp;<a href="/user/register.html">注册</a>
+    </div>
+    <div th:if="${!#lists.isEmpty(#httpServletRequest.getSession().getAttribute('user'))}" >
+        <span th:text="'欢迎您：'+${#httpServletRequest.getSession().getAttribute('user').nickName}"></span>&nbsp;||&nbsp;<a href="javascript:void(0)" id="logout">退出</a>&nbsp;||&nbsp;<a href="/article/publish.html">发布</a>
+    </div>
+    <hr style="height:10px;border:none;border-top:10px groove skyblue;" />
+    <div>
+        <h1 th:text="${article.title}"></h1>
+        <p th:text="${article.user.nickName}"></p>
+        <p th:text="${article.createTime}"></p><br/><br/>
+        <div th:utext="${article.text}">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="shortcut icon" type="image/ico" th:href="@{/images/logo.ico}"/>
+    <title>王先荣个人论坛_登录页</title>
+    <script type="application/javascript" th:src="@{/js/lib/jquery-1.7.1.min.js}"></script>
+    <script type="application/javascript" th:src="@{/js/login.js}"></script>
+</head>
+<body>
+<form action="#javascript:void(0)" class="register_form">
+    邮箱：<input type="email" name="email" id="email"/><br/>
+    密码：<input type="password" name="password" id="password"/><br/>
+    <input type="button" value="登录" id="sub"/>
+</form><br/>
+<span>找回密码：</span><br/>
+<from>
+    邮箱：<input type="email"/>
+    <input type="button" value="确定"/>
+</from>
+</body>
+</html>

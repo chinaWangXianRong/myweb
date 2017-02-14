@@ -1,0 +1,55 @@
+wang{color: #ff0000}
+*{margin:0;padding:0;}
+.green{width:100%;height:25px;background:#090;}
+.box{background:#9CF;}
+.header{width:100%;height:148px; background:#FFF}
+.header_content_up{width:1000px;height:100px;margin:auto}
+.header_content_left{float:left}
+.header_content_right{float:right}
+.advice_title{ text-align:center;}
+.advice_content{width:250px;height:56px;border: #ff6600 1px solid;margin:auto}
+.header_content_below{width:100%;height:48px;background:#9CF}
+.header_content_navigation{width:1000px;height:48px;background:#238BC5;margin:auto}
+.content{width:100%;background:#9CF}
+.content_content{width:1000px;margin:auto;height:auto;display:table; background:#FFF;margin-top:25px; padding-bottom:25px;}
+.content_content_one{width:1000px;height:auto;float:left;}
+.content_content_left{ width:600px;float:left;}
+.content_content_right{width:300px;height:250px;float:right}
+.content_content_right_login{background:#F6F6F6;margin-top:20px}
+.content_content_right_register{background:#F6F6F6;margin-top:20px;text-align:center;}
+.article{;background:#F6F6F6;margin-top:20px;padding:10px}
+.article_authorAndTime{float:right}
+.fotter{width:auto;height:100px;margin-top:25px}
+.fotter_content{width:1000px;height:100px; background:#CCF;margin:auto}
+.fotter_content_copyright{width:300px;float:left;text-align:center; margin-top:30px}
+.fotter_content_email{width:300px;float:left;text-align:center; margin-top:30px}
+.fotter_content_version{width:300px;float:right;text-align:center; margin-top:30px}
+
+#findPassword{float:right;margin-right: 20px;text-decoration:none}
+#sub{width:80px;margin-left: 5px;}
+.paging{margin-top:20px;}
+
+/*分页*/
+.faceShow{
+    width:100%;
+    margin:0 auto;
+    position:relative;
+}
+.faceShow span{
+    line-height:10px;
+    padding:5px;
+    width:10%;
+    text-align:center;
+    border:1px #000000 solid;
+
+}
+#faceContent{
+    width:800px;
+    border:1px #CCCCCC solid;
+    display:none;
+    border-radius:5px;
+}
+#clipDIV ul{
+    width:600px;
+    margin:0 auto;
+}
