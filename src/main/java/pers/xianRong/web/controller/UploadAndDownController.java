@@ -51,7 +51,7 @@ public class UploadAndDownController {
                 String name = file.getOriginalFilename();
                 String exName = name.substring(name.lastIndexOf(".") + 1).toLowerCase();//获取扩展名
                 newName = UUID.randomUUID().toString() .replaceAll("-","")+ "." + exName;
-                out = new FileOutputStream(picturePath + "\\" + newName);
+                out = new FileOutputStream(picturePath + File.separator + newName);
                 in = file.getInputStream();
                 byte[] b = new byte[1024];
                 int len = 0;
@@ -59,7 +59,7 @@ public class UploadAndDownController {
                     out.write(b, 0, len);
                 }
 
-                result="/picture/"+newName;
+                result="/picture"+File.separator+newName;
             }
 
 
